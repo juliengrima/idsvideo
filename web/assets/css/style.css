@@ -1,0 +1,45 @@
+a{
+    border-bottom: none;
+}
+
+.span-logo{
+    color: darkviolet;
+}
+
+.span-logo-close{
+    color: #F5871F;
+}
+
+.logo-size{
+    width: 150px;
+    height: 350px;
+}
+
+.plus-icon{
+
+    width: 45px;
+    height: 45px;
+    vertical-align: top;
+}
+
+.horizontal-center{
+    margin-left: 50%;
+    margin-top: 20px;
+}
+
+.horizontal-center-edit{
+    margin-left: 40%;
+    margin-top: 20px;
+}
+
+.button-spacing{
+    margin-top: 50px;
+}
+
+.input-size{
+    width: -moz-fit-content;
+}
+
+/*.special-right{*/
+    /*margin-left: 50%;*/
+/*}*/

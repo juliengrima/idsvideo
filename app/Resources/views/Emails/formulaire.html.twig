@@ -1,0 +1,49 @@
+{# Corinne/Resources/views/Emails/registration.html.twig #}
+<style>
+    body {
+        background-color: powderblue;
+    }
+
+    .one{
+        background-color: #AAAAAA;
+    }
+    .two{
+        background-color: #dadada;
+    }
+    .h3{
+
+    }
+
+</style>
+
+
+<body>
+
+    <section class="one">
+        <h3 class="h3">Demande de devis de {{ contact.nom }}!</h3>!
+    </section>
+
+    <section class="two">
+
+        <p> Un message a été envoyé à Cybix-Technology <br>
+            Le message est le suivant : <br>
+            -------------------------------------------------------------- </p>
+        {{  contact.text }}
+        <br>
+        <p class="amber-text">----------------------------------------- </p>
+        <p class="amber-text"> Merci !</p>
+
+    </section>
+
+
+
+
+
+
+
+
+
+</body>
+{# Makes an absolute URL to the /images/logo.png file #}
+{#<img src="{{ abso }}  #}
+

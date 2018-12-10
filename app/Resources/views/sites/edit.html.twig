@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    <p>Modifier site</p>
+{% endblock %}
+
+{% block body %}
+
+    <section id="one" class="wrapper">
+        <div class="inner alt">
+
+            <h3 class="align-center">Editer un site</h3>
+
+            {{ form_start(edit_form) }}
+
+            <div>
+                <div>Nom :</div>
+                <div>{{ form_widget(edit_form.name) }}</div>
+            </div>
+            <div>
+                <div>Adresse :</div>
+                <div>{{ form_widget(edit_form.address) }}</div>
+            </div>
+            <div>
+                <div>Désignation :</div>
+                <div>{{ form_widget(edit_form.description) }}</div>
+            </div>
+            <div>
+                <div>Image :</div>
+                <div>{{ form_widget(edit_form.media) }}</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="two horizontal-center-edit">
+
+        <div class="row">
+            <input type="submit" value="Valider" />
+        {{ form_end(edit_form) }}
+
+        {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+            <a href="{{ path('homepage') }}">
+                <img src="{{ asset('assets/images/local/icons/home-icon.svg') }}" class="plus-icon">
+            </a>
+        </div>
+    </section>
+
+{% endblock %}

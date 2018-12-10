@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block login %}
+
+    <div class="container">
+        <div class="row center">
+            <div class="col s12">
+                <h1>REGISTER</h1>
+            </div>
+        </div>
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+        <div class="row">
+            <div class="col s12">
+
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+                <div class="row">
+                    <label for="username">{{ 'security.login.username'|trans }}</label>
+                    {{ form_widget(form.username, { 'attr': {'class': 'input-size'}}) }}
+                </div>
+                <div class="row">
+                    <label for="username">Familly</label>
+                    {{ form_widget(form.familly, { 'attr': {'class': 'input-size'}}) }}
+                </div>
+                <div class="row">
+                    <label for="username">Address</label>
+                    {{ form_widget(form.address, { 'attr': {'class': 'input-size'}}) }}
+                </div>
+                <div class="row">
+                        <label for="username">E-mail</label>
+                    {{ form_widget(form.email, { 'attr': {'class': 'input-size'}}) }}
+                </div>
+                <div class="row">
+                    {{ form_widget(form.plainPassword, { 'attr': {'class': 'input-size'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center">
+
+                <button class="btn-floating btn-large waves-effect waves-light green darken-1 tooltipped"
+                        type="submit"
+                        id="_submit"
+                        name="_submit"
+                        value="{{ 'registration.submit'|trans }}"
+                        data-position="bottom"
+                        data-delay="50"
+                        data-tooltip="Enregistrer">
+                    <i class="material-icons">check</i>
+                </button>
+            </div>
+        </div>
+
+                {{ form_end(form) }}
+
+
+
+    </div>
+
+{% endblock %}

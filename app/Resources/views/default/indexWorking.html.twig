@@ -1,0 +1,89 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <!-- One -->
+    <section id="one" class="wrapper style2 special">
+        <header class="major">
+            <h2>Au plus près de nos clients</h2>
+        </header>
+        <ul class="icons major">
+            <li>Rendez-vous à domicile</li>
+            <li>Applications web sur mesure</li>
+            <li>A l'écoute du client</li>
+            <li><a href="mailto:cybix.technology@gmail.com">Nous contacter</a></li>
+            {#<li><a href="{{ path('app_contact') }}">Nous contacter</a></li>#}
+        </ul>
+    </section>
+
+    <!-- Two -->
+
+    <section id="two" class="wrapper">
+        <div class="inner alt">
+
+            {# AFFICHAGE BOUCLE #}
+
+            {% for site in sites %}
+
+                <div class="spotlight">
+                    <a href="{{site.address }}">
+                        <div class="image"><img src="{{ asset(site.media.path) }}" alt="{{ site.media.name }}" /></div>
+                    </a>
+                    <a href="{{site.address }}">
+                        <div class="content">
+                            <h3>{{ site.name }}</h3>
+                            <p>{{ site.description }}</p>
+                        </div>
+                    </a>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                   <div class="modify">
+                       <a href="{{ path('sites_edit', { 'id': site.id }) }}">
+                           <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                       </a>
+                   </div>
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+            {# FIN DE BOUCLE#}
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <section class="special">
+                    <ul class="icons labeled">
+                        <li>
+                           <a href="{{ path('sites_new') }}">
+                               <img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                           </a>
+                        </li>
+                    </ul>
+                </section>
+            {% endif %}
+
+            <section class="special">
+                <ul class="icons labeled">
+                    <li><span class="icon fa-camera-retro"><span class="label">Visite à domicile</span></span></li>
+                    <li><span class="icon fa-refresh"><span class="label">échange en temps réel</span></span></li>
+                    <li><span class="icon fa-cloud"><span class="label">Gestion complète du support</span></span></li>
+                    <li><span class="icon fa-code"><span class="label">Codage intégral</span></span></li>
+                    <li><span class="icon fa-desktop"><span class="label">Mise en ligne par nos soin</span></span></li>
+                </ul>
+            </section>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+{% endblock %}

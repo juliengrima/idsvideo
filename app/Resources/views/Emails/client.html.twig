@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+
+{# Corinne/Resources/views/Emails/registration.html.twig #}
+
+
+{% block body %}
+
+
+<section id="one" class="wrapper">
+    <div class="inner alt">
+
+        <h3>Demande envoyée</h3>
+
+        <div>
+            <p>Bonjour {{ contact.nom }}!</p>
+            <p>Votre demande de devis a bien été transmis.</p>
+            <p>Merci !</p>
+        </div>
+
+
+    </div>
+</section>
+
+{% endblock %}
+
+
+
+{# Makes an absolute URL to the /images/logo.png file #}
+{#<img src="{{ absolute_url(asset('images/logo.png')) }}">#}

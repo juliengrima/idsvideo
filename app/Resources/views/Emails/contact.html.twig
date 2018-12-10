@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    {{ dump(contact) }}
+
+    {{ form_start(form) }}
+
+    <section id="one" class="wrapper">
+        <div class="inner alt">
+
+            <h3 class="align-center">Nous contacter</h3>
+
+            <div>
+                <div>Nom :</div>
+                <div>{{ form_widget(form.nom) }}</div>
+            </div>
+            <div>
+                <div>E-mail :</div>
+                <div>{{ form_widget(form.mail) }}</div>
+            </div>
+            <div>
+                <div>Désignation :</div>
+                <div>{{ form_widget(form.text) }}</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="two horizontal-center">
+
+        <input type="submit" value="Valider" />
+
+    </section>
+
+    {{ form_end(form) }}
+
+{% endblock %}

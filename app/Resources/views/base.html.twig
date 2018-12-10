@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cybix-technology - {% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Allura|Dancing+Script|Great+Vibes|Lobster|Pacifico|Parisienne|Sacramento|Tangerine" rel="stylesheet">
+        <!-- ICONS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body id="top">
+
+        {% block header %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% block footer %}
+        {% endblock %}
+
+        {% block javascripts %}
+            <!-- Scripts -->
+            <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+            <script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>
+            <script src="{{ asset('assets/js/skel.min.js') }}"></script>
+            <script src="{{ asset('assets/js/util.js') }}"></script>
+            <script src="{{ asset('assets/js/ie/respond.min.js') }}"></script>
+            <script src="{{ asset('assets/js/main.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
