@@ -29,44 +29,47 @@
 
             {# AFFICHAGE BOUCLE #}
 
-            {#{% for site in sites %}#}
+            {% for videos in video %}
 
-                {#<div class="spotlight">#}
-                    {#<a href="{{site.address }}">#}
-                        {#<div class="image"><img src="{{ asset(site.media.path) }}" alt="{{ site.media.name }}" /></div>#}
-                    {#</a>#}
-                    {#<a href="{{site.address }}">#}
-                        {#<div class="content">#}
-                            {#<h3>{{ site.name }}</h3>#}
-                            {#<p>{{ site.description }}</p>#}
-                        {#</div>#}
-                    {#</a>#}
+                <div class="spotlight">
+                        <div class="video-magin">
+                            <video width="400" height="222" controls="controls" autoplay="false" preload="metadata">
+                                <source src="{{ asset(videos.media.path) }}" type="video/mp4" />
+                                <source src="{{ asset(videos.media.path) }}" type="video/webm" />
+                                <source src="{{ asset(videos.media.path) }}" type="video/ogg" />
+                                <source src="{{ asset(videos.media.path) }}" type="video/avi" />
+                            </video>
+                        </div>
+                        <div class="content">
+                            <h3>{{ videos.name }}</h3>
+                            <p>{{ videos.comment }}</p>
+                        </div>
 
-                    {#{% if is_granted('ROLE_ADMIN') %}#}
-                   {#<div class="modify">#}
-                       {#<a href="{{ path('sites_edit', { 'id': site.id }) }}">#}
-                           {#<img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">#}
-                       {#</a>#}
-                   {#</div>#}
-                    {#{% endif %}#}
+                    {% if is_granted('ROLE_ADMIN') %}
+                   <div class="modify">
+                       <a href="{{ path('video_edit', { 'id': videos.id }) }}">
+                           <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                       </a>
+                   </div>
+                    {% endif %}
 
-                {#</div>#}
+                </div>
 
-            {#{% endfor %}#}
+            {% endfor %}
 
             {# FIN DE BOUCLE#}
 
-            {#{% if is_granted('ROLE_ADMIN') %}#}
-                {#<section class="special">#}
-                    {#<ul class="icons labeled">#}
-                        {#<li>#}
-                           {#<a href="{{ path('sites_new') }}">#}
-                               {#<img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon">#}
-                           {#</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                {#</section>#}
-            {#{% endif %}#}
+            {% if is_granted('ROLE_ADMIN') %}
+                <section class="special">
+                    <ul class="icons labeled">
+                        <li>
+                           <a href="{{ path('video_new') }}">
+                               <img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                           </a>
+                        </li>
+                    </ul>
+                </section>
+            {% endif %}
 
             <section class="special">
                 <ul class="icons labeled">

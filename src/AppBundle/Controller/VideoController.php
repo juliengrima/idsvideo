@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Media;
 use AppBundle\Entity\Video;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,33 +34,37 @@ class VideoController extends Controller
      */
     public function newAction(Request $request)
     {
+
         $video = new Video();
         $form = $this->createForm('AppBundle\Form\VideoType', $video);
         $form->handleRequest($request);
 
+//        ini_set(upload_max_filesize,50000M);
+
+
         if ($form->isSubmitted() && $form->isValid()) {
 
+//            var_dump($video);
 
-            /* ON RECUP LE FICHIER IMAGE */
+            /* KEEP PICTURE */
             $imageForm = $form->get ('media');
             $image = $imageForm->getData ();
             $video->setMedia ($image);
 
             if (isset($image)) {
 
-                /* ON DEFINI UN NOM UNIQUE AU FICHIER UPLOAD : LE PREG_REPLACE PERMET LA SUPPRESSION DES ESPACES ET AUTRES CARACTERES INDESIRABLES*/
-                $image->setPicname (preg_replace ('/\W/', '_', "Object_" . uniqid ()));
+                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                $image->setName (preg_replace ('/\W/', '_', "movie_" . uniqid ()));
 
                 // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
                 $this->get ('media.interface')->mediaUpload ($image);
             }
 
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($video);
             $em->flush();
 
-            return $this->redirectToRoute('video_show', array('id' => $video->getId()));
+            return $this->redirectToRoute('videopage', array('id' => $video->getId()));
         }
 
         return $this->render('video/new.html.twig', array(

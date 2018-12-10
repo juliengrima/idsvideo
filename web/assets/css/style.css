@@ -40,6 +40,24 @@ a{
     width: -moz-fit-content;
 }
 
-/*.special-right{*/
-    /*margin-left: 50%;*/
-/*}*/
+.special-right{
+    margin-left: 25%;
+}
+
+.special-right-buton{
+    margin-left: 40%;
+    list-style: none !important;
+}
+
+.ul-buton{
+    list-style: none !important;
+}
+
+.h1size{
+    font-size: 1.5em;
+    margin-top: 2%;
+}
+
+.video-magin{
+    margin-right: 4%;
+}

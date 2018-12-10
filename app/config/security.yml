@@ -25,7 +25,7 @@ security:
 
             logout:
                 path: fos_user_security_logout
-                target: videopage
+                target: homepage
 
             anonymous: true
 

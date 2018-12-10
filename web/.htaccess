@@ -66,3 +66,9 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+# TYPE MIME ACCEPT VIDEO UPLOAD
+AddType video/ogg  .ogv
+AddType video/mp4  .mp4
+AddType video/webm .webm
+AddType video/avi  .avi

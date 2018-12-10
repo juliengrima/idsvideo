@@ -9,7 +9,7 @@ imports:
 parameters:
     locale: fr
     # Path location Media
-    medias_directory: '%kernel.root_dir%/../web/assets/images/downloads'
+    medias_directory: '%kernel.root_dir%/../web/assets/videos'
 
 framework:
     #esi: ~

@@ -1,16 +1,66 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Video creation</h1>
+    <h1 class="align-center h1size">Ajouter une vidéo</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    <div class="row">
+        <div class="special-right">
+            <table>
+                <tr>
+                    <td>Nom :</td>
+                    <td>
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>description :</td>
+                    <td>
+                        {{ form_widget(form.comment) }}
+                        {{ form_errors(form.comment) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ajout du média :</td>
+                    <td>
+                        {{ form_widget(form.media) }}
+                        {{ form_errors(form.media) }}
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+        <div class="row">
+            <div class="special-right-buton">
+
+                <ul class="ul-buton">
+                    <li>
+                        <input type="submit" value="Create" />
+                    </li>
+
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('video_index') }}">Back to the list</a>
-        </li>
-    </ul>
+                    <li>
+                        <a href="{{ path('video_index') }}">Back to the list</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {#{{ form_start(form) }}#}
+        {#{{ form_widget(form) }}#}
+        {#<input type="submit" value="Create" />#}
+    {#{{ form_end(form) }}#}
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('video_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
 {% endblock %}

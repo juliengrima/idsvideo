@@ -7,9 +7,9 @@ app_media:
     resource: "@AppBundle/Resources/config/routing/media.yml"
     prefix:   /admin/media
 
-app_sites:
-    resource: "@AppBundle/Resources/config/routing/sites.yml"
-    prefix:   /admin/sites
+app_video:
+    resource: "@AppBundle/Resources/config/routing/video.yml"
+    prefix:   /admin/video
 
 app_contact:
     path:     /contact

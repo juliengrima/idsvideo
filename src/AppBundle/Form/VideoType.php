@@ -15,7 +15,7 @@ class VideoType extends AbstractType
     {
         $builder->add('comment')
                 ->add('name')
-                ->add('media');
+                ->add('media', Media::class);
     }/**
      * {@inheritdoc}
      */

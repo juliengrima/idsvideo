@@ -34,6 +34,11 @@ services:
         class: AppBundle\Services\mediaInterface
         arguments: ['@service_container']
 
+    # Upload Service videos
+#    video.interface:
+#        class: AppBundle\Services\videoInterface
+#        arguments: ['@service_container']
+
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
