@@ -15,4 +15,6 @@ AppBundle\Entity\Media:
         path:
             type: string
             length: 255
+        comment:
+            type: text
     lifecycleCallbacks: {  }
