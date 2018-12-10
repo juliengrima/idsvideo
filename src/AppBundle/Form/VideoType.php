@@ -13,7 +13,9 @@ class VideoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('comment')->add('media');
+        $builder->add('comment')
+                ->add('name')
+                ->add('media');
     }/**
      * {@inheritdoc}
      */

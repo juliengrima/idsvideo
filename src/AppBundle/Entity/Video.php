@@ -22,6 +22,11 @@ class Video
      */
     private $media;
 
+    /**
+     * @var string
+     */
+    private $name;
+
 
     /**
      * Get id
@@ -80,5 +85,28 @@ class Video
     {
         return $this->media;
     }
-}
 
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Video
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+}

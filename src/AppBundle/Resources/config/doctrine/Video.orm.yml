@@ -9,6 +9,9 @@ AppBundle\Entity\Video:
       generator:
         strategy: AUTO
   fields:
+    name:
+      type: string
+      length: 255
     comment:
       type: text
 
