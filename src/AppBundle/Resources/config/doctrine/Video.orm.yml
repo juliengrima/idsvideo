@@ -1,0 +1,19 @@
+AppBundle\Entity\Video:
+  type: entity
+  table: null
+  repositoryClass: AppBundle\Repository\VideoRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    comment:
+      type: text
+
+  oneToOne:
+    media:
+      targetEntity: AppBundle\Entity\Media
+      cascade: ['all']
+  lifecycleCallbacks: {  }
