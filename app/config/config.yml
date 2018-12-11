@@ -10,6 +10,7 @@ parameters:
     locale: fr
     # Path location Media
     medias_directory: '%kernel.root_dir%/../web/assets/videos'
+    documents_directory: '%kernel.root_dir%/../web/assets/documents'
 
 framework:
     #esi: ~

@@ -33,6 +33,9 @@ services:
     media.interface:
         class: AppBundle\Services\mediaInterface
         arguments: ['@service_container']
+    documents.interface:
+        class: AppBundle\Services\documentsInterface
+        arguments: ['@service_container']
 
     # Upload Service videos
 #    video.interface:
