@@ -34,6 +34,6 @@ class mediaInterface extends Controller
 		// Puis on upload le nouveau fichier
 		$extension = $file->guessExtension();
 		$file->move($this->container->getParameter('medias_directory'), $media->getName().'.'.$extension);
-		$media->setPath('images/downloads/'.$media->getName().'.'.$extension);
+		$media->setPath('assets/videos/'.$media->getName().'.'.$extension);
 	}
 }

@@ -1,7 +1,0 @@
-
-En cas de référencement
-oneToOne:
-        media:
-            targetEntity: AppBundle\Entity\Media
-            cascade: ['all']
-

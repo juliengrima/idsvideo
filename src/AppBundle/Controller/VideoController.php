@@ -107,7 +107,7 @@ class VideoController extends Controller
             if (isset($image)) {
 
                 /* ON DEFINI UN NOM UNIQUE AU FICHIER UPLOAD : LE PREG_REPLACE PERMET LA SUPPRESSION DES ESPACES ET AUTRES CARACTERES INDESIRABLES*/
-                $image->setPicname (preg_replace ('/\W/', '_', "Object_" . uniqid ()));
+                $image->setName (preg_replace ('/\W/', '_', "Movie_" . uniqid ()));
 
                 // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
                 $this->get ('media.interface')->mediaUpload ($image);
@@ -115,7 +115,7 @@ class VideoController extends Controller
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('video_edit', array('id' => $video->getId()));
+            return $this->redirectToRoute('videopage', array('id' => $video->getId()));
         }
 
         return $this->render('video/edit.html.twig', array(
