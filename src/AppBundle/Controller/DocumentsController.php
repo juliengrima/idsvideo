@@ -68,20 +68,6 @@ class DocumentsController extends Controller
     }
 
     /**
-     * Finds and displays a document entity.
-     *
-     */
-    public function showAction(Documents $document)
-    {
-        $deleteForm = $this->createDeleteForm($document);
-
-        return $this->render('documents/show.html.twig', array(
-            'document' => $document,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
      * Displays a form to edit an existing document entity.
      *
      */

@@ -2,12 +2,6 @@ documents_index:
     path:     /
     defaults: { _controller: "AppBundle:Documents:index" }
     methods:  GET
-
-documents_show:
-    path:     /admin/{id}/show
-    defaults: { _controller: "AppBundle:Documents:show" }
-    methods:  GET
-
 documents_new:
     path:     /admin/new
     defaults: { _controller: "AppBundle:Documents:new" }

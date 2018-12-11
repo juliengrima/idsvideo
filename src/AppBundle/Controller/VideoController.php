@@ -13,21 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class VideoController extends Controller
 {
-//    /**
-//     * Lists all video entities.
-//     *
-//     */
-//    public function indexAction()
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $videos = $em->getRepository('AppBundle:Video')->findAll();
-//
-//        return $this->render('video/index.html.twig', array(
-//            'videos' => $videos,
-//        ));
-//    }
-
     /**
      * Creates a new video entity.
      *
@@ -72,20 +57,6 @@ class VideoController extends Controller
             'form' => $form->createView(),
         ));
     }
-
-//    /**
-//     * Finds and displays a video entity.
-//     *
-//     */
-//    public function showAction(Video $video)
-//    {
-//        $deleteForm = $this->createDeleteForm($video);
-//
-//        return $this->render('video/show.html.twig', array(
-//            'video' => $video,
-//            'delete_form' => $deleteForm->createView(),
-//        ));
-//    }
 
     /**
      * Displays a form to edit an existing video entity.

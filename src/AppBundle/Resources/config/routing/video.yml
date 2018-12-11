@@ -1,13 +1,3 @@
-video_index:
-    path:     /
-    defaults: { _controller: "AppBundle:Video:index" }
-    methods:  GET
-
-video_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:Video:show" }
-    methods:  GET
-
 video_new:
     path:     /new
     defaults: { _controller: "AppBundle:Video:new" }
