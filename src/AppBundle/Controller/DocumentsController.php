@@ -38,6 +38,21 @@ class DocumentsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /* KEEP PICTURE */
+            $imageForm = $form->get ('media');
+            $image = $imageForm->getData ();
+            $document->setMedia ($image);
+
+            if (isset($image)) {
+
+                /* GIVE NAME TO THE FILE : PREG_REPLACE PERMITS THE REMOVAL OF SPACES AND OTHER UNDESIRABLE CHARACTERS*/
+                $image->setName (preg_replace ('/\W/', '_', "documents_" . uniqid ()));
+
+                // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                $this->get ('documents.interface')->mediaUpload ($image);
+            }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($document);
             $em->flush();
@@ -76,6 +91,21 @@ class DocumentsController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            /* ON RECUP LE FICHIER IMAGE */
+            $imageForm = $editForm->get ('media');
+            $image = $imageForm->getData ();
+            $document->setMedia ($image);
+
+            if (isset($image)) {
+
+                /* ON DEFINI UN NOM UNIQUE AU FICHIER UPLOAD : LE PREG_REPLACE PERMET LA SUPPRESSION DES ESPACES ET AUTRES CARACTERES INDESIRABLES*/
+                $image->setName (preg_replace ('/\W/', '_', "documents_" . uniqid ()));
+
+                // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                $this->get ('documents.interface')->mediaUpload ($image);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('documents_edit', array('id' => $document->getId()));

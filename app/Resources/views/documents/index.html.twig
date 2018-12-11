@@ -1,41 +1,50 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Documents list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Comment</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for document in documents %}
-            <tr>
-                <td><a href="{{ path('documents_show', { 'id': document.id }) }}">{{ document.id }}</a></td>
-                <td>{{ document.name }}</td>
-                <td>{{ document.comment }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('documents_show', { 'id': document.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('documents_edit', { 'id': document.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <section id="one" class="wrapper style2 special">
+        <h1>Documents list</h1>
+    </section>
 
-    <ul>
-        <li>
-            <a href="{{ path('documents_new') }}">Create a new document</a>
-        </li>
-    </ul>
+<section id="two" class="wrapper">
+    <div class="inner alt">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for document in documents %}
+                <tr>
+                    <td>{{ document.name }}</td>
+                    <td>{{ document.comment }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('documents_show', { 'id': document.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('documents_edit', { 'id': document.id }) }}">
+                                    <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    <section class="special">
+        <ul class="icons labeled">
+            <li>
+                <a href="{{ path('documents_new') }}"><img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon"></a>
+            </li>
+        </ul>
+    </section>
 {% endblock %}
