@@ -61,3 +61,8 @@ a{
 .video-magin{
     margin-right: 4%;
 }
+
+.image-logo{
+    opacity: 0.88;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
