@@ -13,7 +13,9 @@ class DocumentsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('comment')->add('media');
+        $builder->add('name')
+                ->add('comment')
+                ->add('media', Media::class);
     }/**
      * {@inheritdoc}
      */

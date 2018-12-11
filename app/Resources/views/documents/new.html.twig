@@ -1,16 +1,54 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Document creation</h1>
+
+    <h1 class="align-center h1size">Ajouter un document</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    <div class="row">
+        <div class="special-right">
+            <table>
+                <tr>
+                    <td>Nom :</td>
+                    <td>
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>description :</td>
+                    <td>
+                        {{ form_widget(form.comment) }}
+                        {{ form_errors(form.comment) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ajout du fichier :</td>
+                    <td>
+                        {{ form_widget(form.media) }}
+                        {{ form_errors(form.media) }}
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="special-right-buton">
+
+            <ul class="ul-buton">
+                <li>
+                    <input type="submit" value="Create" />
+                </li>
+
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('documents_index') }}">Back to the list</a>
-        </li>
-    </ul>
+                <li>
+                    <a href="{{ path('documents_index') }}">Retour aux documents</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
 {% endblock %}

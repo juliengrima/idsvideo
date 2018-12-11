@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Documents;
+use AppBundle\Entity\Media;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -33,7 +34,7 @@ class DocumentsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $document = new Document();
+        $document = new Documents();
         $form = $this->createForm('AppBundle\Form\DocumentsType', $document);
         $form->handleRequest($request);
 
@@ -57,7 +58,7 @@ class DocumentsController extends Controller
             $em->persist($document);
             $em->flush();
 
-            return $this->redirectToRoute('documents_show', array('id' => $document->getId()));
+            return $this->redirectToRoute('documents_index', array('id' => $document->getId()));
         }
 
         return $this->render('documents/new.html.twig', array(
@@ -108,7 +109,7 @@ class DocumentsController extends Controller
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('documents_edit', array('id' => $document->getId()));
+            return $this->redirectToRoute('documents_index', array('id' => $document->getId()));
         }
 
         return $this->render('documents/edit.html.twig', array(

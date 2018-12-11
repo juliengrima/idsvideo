@@ -11,21 +11,24 @@
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Comment</th>
-                    <th>Actions</th>
+                    <th>Fichier</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
             {% for document in documents %}
                 <tr>
+                    <td>
+                        <a href="{{ asset(document.media.path) }}">
+                            <img src="{{ asset('assets/images/local/icons/file.png') }}" class="plus-icon">
+                        </a>
+                    </td>
                     <td>{{ document.name }}</td>
                     <td>{{ document.comment }}</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('documents_show', { 'id': document.id }) }}">show</a>
-                            </li>
+                        <ul class="ul-buton">
                             <li>
                                 <a href="{{ path('documents_edit', { 'id': document.id }) }}">
                                     <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">

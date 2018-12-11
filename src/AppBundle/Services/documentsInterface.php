@@ -33,7 +33,7 @@ class documentsInterface extends Controller
 		}
 		// Puis on upload le nouveau fichier
 		$extension = $file->guessExtension();
-		$file->move($this->container->getParameter('medias_directory'), $media->getName().'.'.$extension);
+		$file->move($this->container->getParameter('documents_directory'), $media->getName().'.'.$extension);
 		$media->setPath('assets/documents/'.$media->getName().'.'.$extension);
 	}
 }
