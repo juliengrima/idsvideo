@@ -4,21 +4,21 @@ documents_index:
     methods:  GET
 
 documents_show:
-    path:     /{id}/show
+    path:     /admin/{id}/show
     defaults: { _controller: "AppBundle:Documents:show" }
     methods:  GET
 
 documents_new:
-    path:     /new
+    path:     /admin/new
     defaults: { _controller: "AppBundle:Documents:new" }
     methods:  [GET, POST]
 
 documents_edit:
-    path:     /{id}/edit
+    path:     /admin/{id}/edit
     defaults: { _controller: "AppBundle:Documents:edit" }
     methods:  [GET, POST]
 
 documents_delete:
-    path:     /{id}/delete
+    path:     /admin/{id}/delete
     defaults: { _controller: "AppBundle:Documents:delete" }
     methods:  DELETE

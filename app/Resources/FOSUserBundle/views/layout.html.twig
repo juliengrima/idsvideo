@@ -20,7 +20,6 @@
                 <div class="">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <a href="{{ path('fos_user_security_logout') }}" class="min-font">
-                            {#{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}#}
                             <img src="{{ asset('assets/images/local/icons/delete.svg') }}" class="plus-icon">
                         </a>
                     {% else %}
@@ -28,11 +27,6 @@
                     {% endif %}
                 </div>
                 {% block button %}
-                <div class="">
-                    <a class="" href="{{ path('homepage') }}">
-                        Retour à l'accueil
-                    </a>
-                </div>
                 {% endblock %}
             </div>
 

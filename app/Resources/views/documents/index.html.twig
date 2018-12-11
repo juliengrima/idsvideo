@@ -14,7 +14,9 @@
                     <th>Fichier</th>
                     <th>Nom</th>
                     <th>Description</th>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <th>Action</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -27,15 +29,13 @@
                     </td>
                     <td>{{ document.name }}</td>
                     <td>{{ document.comment }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <td>
-                        <ul class="ul-buton">
-                            <li>
-                                <a href="{{ path('documents_edit', { 'id': document.id }) }}">
-                                    <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="{{ path('documents_edit', { 'id': document.id }) }}">
+                            <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                        </a>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
             </tbody>
@@ -46,7 +46,11 @@
     <section class="special">
         <ul class="icons labeled">
             <li>
-                <a href="{{ path('documents_new') }}"><img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon"></a>
+                {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('documents_new') }}">
+                    <img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                </a>
+                {% endif %}
             </li>
         </ul>
     </section>

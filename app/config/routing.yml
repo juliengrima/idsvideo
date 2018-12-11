@@ -19,8 +19,6 @@ app_contact:
     path:     /contact
     defaults: { _controller: "AppBundle:Contact:new" }
     methods:  [GET, POST]
-
-
 ###############################################################
 #
 #                   FOSUSER ROUTING
