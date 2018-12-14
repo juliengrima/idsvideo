@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1 class="align-center h1size">Editer la vidéo</h1>
+
+    {{ form_start(edit_form) }}
+    <div class="row">
+        <div class="special-right">
+
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <span>Nom :</span>
+                </div>
+                <div class="col s12 m6 l6">
+                    {{ form_widget(edit_form.name) }}
+                    {{ form_errors(edit_form.name) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <span>Decription</span>
+                </div>
+                <div class="col s12 m6 l6">
+                    {{ form_widget(edit_form.comment) }}
+                    {{ form_errors(edit_form.comment) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <span>Sélection du média :</span>
+                </div>
+                <div class="col s12 m6 l6">
+                    {{ form_widget(edit_form.media) }}
+                    {{ form_errors(edit_form.media) }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="special-right-buton">
+            <div class="col s6 m6 l6">
+                <input type="submit" value="Modifier" />
+            </div>
+
+    {{ form_end(edit_form) }}
+
+            <div class="col s6 m6 l6">
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

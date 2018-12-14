@@ -15,7 +15,7 @@ class Media extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('file', FileType::class, array(
-            'label' => 'File to download: ',
+            'label' => false,
             'data_class' => null
         ))
         ;

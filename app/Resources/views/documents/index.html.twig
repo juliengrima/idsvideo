@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+<section id="two" class="wrapper">
+    <div class="inner alt">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fichier</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <th>Action</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for document in documents %}
+                <tr>
+                    <td>
+                        <a href="{{ asset(document.media.path) }}" target="_blank">
+                            <img src="{{ asset('assets/images/local/icons/file.png') }}" class="plus-icon">
+                        </a>
+                    </td>
+                    <td>{{ document.name }}</td>
+                    <td>{{ document.comment }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <td>
+                        <a href="{{ path('documents_edit', { 'id': document.id }) }}">
+                            <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                        </a>
+                    </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    <section class="special">
+        <ul class="icons labeled">
+            <li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('documents_new') }}">
+                    <img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                </a>
+                {% endif %}
+            </li>
+        </ul>
+    </section>
+{% endblock %}

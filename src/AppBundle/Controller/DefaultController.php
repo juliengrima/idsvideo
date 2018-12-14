@@ -11,17 +11,26 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction(){
+
+        return $this->redirectToRoute('fos_user_security_login');
+
+    }
+
+    /**
+     * @Route("/home", name="videopage")
+     */
+    public function videoAction(Request $request)
     {
 
         $em = $this->getDoctrine ()->getManager ();
-        $site = $em->getRepository ('AppBundle:Sites')->findAll ();
-
+        $video = $em->getRepository ('AppBundle:Video')->findAll ();
 
         // replace this example code with whatever you need
         return $this->render('default/indexWorking.html.twig', array(
-            'sites' => $site,
+            'video' => $video,
         ));
+
     }
 
 }

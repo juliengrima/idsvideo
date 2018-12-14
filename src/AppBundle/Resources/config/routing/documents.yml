@@ -1,0 +1,18 @@
+documents_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Documents:index" }
+    methods:  GET
+documents_new:
+    path:     /admin/new
+    defaults: { _controller: "AppBundle:Documents:new" }
+    methods:  [GET, POST]
+
+documents_edit:
+    path:     /admin/{id}/edit
+    defaults: { _controller: "AppBundle:Documents:edit" }
+    methods:  [GET, POST]
+
+documents_delete:
+    path:     /admin/{id}/delete
+    defaults: { _controller: "AppBundle:Documents:delete" }
+    methods:  DELETE

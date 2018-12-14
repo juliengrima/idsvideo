@@ -1,0 +1,14 @@
+video_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Video:new" }
+    methods:  [GET, POST]
+
+video_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Video:edit" }
+    methods:  [GET, POST]
+
+video_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Video:delete" }
+    methods:  DELETE

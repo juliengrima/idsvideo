@@ -5,14 +5,22 @@
     <!-- Header -->
     <header id="header">
         <div class="content">
-            <h1><a href="{{ path('homepage') }}"><span class="span-logo">$Cybix_Technology</span><span class="span-logo-close">;</span></a></h1>
-            <p>Agence web <br />
-                particuliers et petites entreprises</p>
+            <h1><a href="{{ path('videopage') }}"><img src="{{ asset('assets/images/local/logo.jpg') }}" class="image-logo"></a></h1>
             <ul class="actions">
-                <li><a href="#one" class="button icon fa-chevron-down scrolly">Voir plus</a></li>
+                <li>
+                    <a href="{{ path('videopage') }}" class="button icon fa-chevron-down scrolly">Voir les vidéos</a>
+                </li>
+                <li>
+                    <a href="{{ path('documents_index') }}" class="button icon fa-chevron-down scrolly">Voir les documents</a>
+                </li>
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+                    <li>
+                        <a href="{{ path('fos_user_security_logout') }}" class="button icon fa-chevron-down scrolly">Déconnexion</a>
+                    </li>
+                {% endif %}
+
             </ul>
         </div>
-        <div class="image phone"><div class="inner"><img src="{{ asset('assets/images/local/codage_php.png') }}" alt="code php" class="logo-size"/></div></div>
     </header>
 
 {% endblock %}
@@ -21,11 +29,12 @@
 
     <footer id="footer">
         <ul class="icons">
-            <li><a href="https://www.facebook.com/CybixTechnology/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            {#<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>#}
-            {#<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>#}
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
         </ul>
-        <p class="copyright"><a href="{{ path('fos_user_security_login') }}" class="login">©</a> Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+        <p class="copyright">
+            <span>© Untitled. Credits:</span> <a href="http://www.groupe-tse.fr/ecotoner/">Ecotoner</a></p>
     </footer>
 
 {% endblock %}
