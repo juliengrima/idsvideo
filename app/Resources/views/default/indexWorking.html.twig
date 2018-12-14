@@ -18,25 +18,25 @@
             {% for videos in video %}
 
                 <div class="spotlight">
-                        <div class="video-magin">
-                            <video width="400" height="222" controls="controls">
-                                <source src="{{ asset(videos.media.path) }}" type="video/mp4" />
-                                <source src="{{ asset(videos.media.path) }}" type="video/webm" />
-                                <source src="{{ asset(videos.media.path) }}" type="video/ogg" />
-                                <source src="{{ asset(videos.media.path) }}" type="video/avi" />
-                            </video>
-                        </div>
-                        <div class="content">
-                            <h3>{{ videos.name }}</h3>
-                            <p>{{ videos.comment }}</p>
-                        </div>
+                    <div class="video-magin">
+                        <video controls="controls" class="video">
+                            <source src="{{ asset(videos.media.path) }}" type="video/mp4" />
+                            <source src="{{ asset(videos.media.path) }}" type="video/webm" />
+                            <source src="{{ asset(videos.media.path) }}" type="video/ogg" />
+                            <source src="{{ asset(videos.media.path) }}" type="video/avi" />
+                        </video>
+                    </div>
+                    <div class="content">
+                        <h3>{{ videos.name }}</h3>
+                        <p>{{ videos.comment }}</p>
+                    </div>
 
                     {% if is_granted('ROLE_ADMIN') %}
-                   <div class="modify">
-                       <a href="{{ path('video_edit', { 'id': videos.id }) }}">
-                           <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
-                       </a>
-                   </div>
+                       <div class="modify">
+                           <a href="{{ path('video_edit', { 'id': videos.id }) }}">
+                               <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                           </a>
+                       </div>
                     {% endif %}
 
                 </div>

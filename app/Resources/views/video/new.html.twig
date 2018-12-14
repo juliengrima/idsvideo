@@ -1,53 +1,61 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1 class="align-center h1size">Ajouter une vidéo</h1>
+<h1 class="align-center h1size">Ajouter une vidéo</h1>
 
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="special-right">
-            <table>
-                <tr>
-                    <td>Nom :</td>
-                    <td>
+<section id="two" class="wrapper">
+    <div class="inner alt">
+
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="special-right">
+
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <span>Nom :</span>
+                    </div>
+                    <div class="col s12 m6 l6">
                         {{ form_widget(form.name) }}
                         {{ form_errors(form.name) }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>description :</td>
-                    <td>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <span>Decription</span>
+                    </div>
+                    <div class="col s12 m6 l6">
                         {{ form_widget(form.comment) }}
                         {{ form_errors(form.comment) }}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ajout du média :</td>
-                    <td>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <span>Sélection du média :</span>
+                    </div>
+                    <div class="col s12 m6 l6">
                         {{ form_widget(form.media) }}
                         {{ form_errors(form.media) }}
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
 
+            </div>
         </div>
-    </div>
+
         <div class="row">
             <div class="special-right-buton">
+                <div class="col s6 m6 l6">
+                    <input type="submit" value="Valider" />
+                </div>
 
-                <ul class="ul-buton">
-                    <li>
-                        <input type="submit" value="Create" />
-                    </li>
+        {{ form_end(form) }}
 
-    {{ form_end(form) }}
-
-                    <li>
-                        <a href="{{ path('videopage') }}">Retour aux vidéos</a>
-                    </li>
-                </ul>
+                <div class="col s6 m6 l6">
+                    <a href="{{ path('videopage') }}">Retour aux vidéos</a>
+                </div>
             </div>
-
         </div>
+
+    </div>
+</section>
 
 {% endblock %}

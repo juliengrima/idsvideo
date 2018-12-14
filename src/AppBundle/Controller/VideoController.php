@@ -111,7 +111,7 @@ class VideoController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('video_index');
+        return $this->redirectToRoute('videopage');
     }
 
     /**
