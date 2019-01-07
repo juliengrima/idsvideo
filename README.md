@@ -21,21 +21,15 @@ A Symfony project created on April 3, 2018, 12:42 pm.
     
         ## **User instructions :**
         
-        YOU CAN VISIT THE WEB SITE AT : http://cybix-tech.com/cinemovies/web/ 
-            for admin access click on logo (c)
-                        in the footer 
-                        ex : (c) create by XXXXXXXX 
-                        
-                log : admin
-                pwd : admin
+        Before start, be sure you have strong ffmpeg installation
         
          - _**Installation :**_
          Open a terminal, move to the folder where you want to clone the project, and copy the following lines of code
                    !! Make sure you have set up a recent version of GIT and COMPOSER !! :
                
          Check the server upload service ex: in local php.ini 
-                post_max_size = 128M
-                upload_max_filesize = 128M
+                post_max_size = 50000M
+                upload_max_filesize = 50000M
                 
         	1. ^$ git@github.com:juliengrima/cinemovies.git 
         	ou
@@ -92,22 +86,14 @@ A Symfony project created on April 3, 2018, 12:42 pm.
 
     ## **Instructions utilisateur :**
     
-    VOUS POUVEZ VISITER LE SITE WEB A L'ADRESSE : http://cybix-tech.com/cinemovies/web/ 
-        l'accès a l'administration il faut cliquer sur le logo (c)
-                        dans le footer 
-                        ex : (c) créé et géré par XXXXXXXX 
-    
-                    log : admin
-                    pwd : admin
-    
      - _**Installation :**_
      Ouvrez un terminal, déplacez-vous dans le dossier où vous souhaitez cloner le projet et copiez les lignes de code suivantes
       !! Assurez vous d'avoir paramètré une version récente de GIT et COMPOSER !! :
       
       checkez le serveur et son service d'upload 
       en local ex: php.ini 
-                      post_max_size = 128M
-                      upload_max_filesize = 128M
+                      post_max_size = 50000M
+                      upload_max_filesize = 50000M
       
     	1.  ^$ git clone git@github.com:juliengrima/idsvideo.git
     	ou

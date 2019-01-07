@@ -6,7 +6,7 @@ use AppBundle\Entity\Media;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use ffmpeg_movie;
+use FFMpeg\FFMpeg;
 
 class mediaInterface extends Controller
 {
@@ -35,21 +35,7 @@ class mediaInterface extends Controller
 		// Puis on upload le nouveau fichier
 		$extension = $file->guessExtension();
 
-        require '../../../vendor/autoload.php';
-
-        $ffmpeg = FFMpeg\FFMpeg::create();
-        $video = $ffmpeg->open($file);
-        $video
-            ->filters()
-            ->resize(new FFMpeg\Coordinate\Dimension(400, 222))
-            ->synchronize();
-//        $video
-//            ->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(10))
-//            ->save('frame.jpg');
-        $video
-            ->save(new FFMpeg\Format\Video\X264(), 'export-x264.mp4');
-
-		$video->move($this->container->getParameter('medias_directory'), $media->getName().'.'.$extension);
+		$file->move($this->container->getParameter('medias_directory'), $media->getName().'.'.$extension);
 		$media->setPath('assets/videos/'.$media->getName().'.'.$extension);
 	}
 }
