@@ -22,7 +22,7 @@ class mediaInterface extends Controller
 		$file = $media->getFile();
 		if ($media->getPath() != null) {	// Si le média contenait déjà un fichier uploadé
 			$tmp = explode('/', $media->getPath());
-			$filename = end($tmp);    // On récupère le nom du fichier ({{media.picname}}.extension
+			$filename = end($tmp);    // On récupère le nom du fichier ({{media.name}}.extension
 
 			// On supprime ce fichier de la mémoire
             if (file_exists ($filename)){
