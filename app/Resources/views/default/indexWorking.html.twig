@@ -16,10 +16,9 @@
             {# AFFICHAGE BOUCLE #}
 
             {% for videos in video %}
-
                 <div class="spotlight">
-                    <div class="video-magin">
-                        <video controls="controls" class="video">
+                    <div id="myVideoElement" class="video-margin" oncontextmenu="return videoContext(this)">
+                        <video controls="controls" class="video" tabindex="-1" controlslist="nodownload">
                             <source src="{{ asset(videos.media.path) }}" type="video/mp4" />
                             <source src="{{ asset(videos.media.path) }}" type="video/webm" />
                             <source src="{{ asset(videos.media.path) }}" type="video/ogg" />

@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/video-stream.css') }}" />
         <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Allura|Dancing+Script|Great+Vibes|Lobster|Pacifico|Parisienne|Sacramento|Tangerine" rel="stylesheet">
         <!-- ICONS -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,7 +17,7 @@
         {% block stylesheets %}
         {% endblock %}
     </head>
-    <body id="top">
+    <body id="top" oncontextmenu="return false">
 
         {% block header %}
         {% endblock %}
@@ -35,6 +36,7 @@
             <script src="{{ asset('assets/js/util.js') }}"></script>
             <script src="{{ asset('assets/js/ie/respond.min.js') }}"></script>
             <script src="{{ asset('assets/js/main.js') }}"></script>
+            <script src="{{ asset('assets/js/video-stream.js') }}"></script>
         {% endblock %}
     </body>
 </html>

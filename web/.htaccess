@@ -68,7 +68,8 @@ DirectoryIndex app.php
 </IfModule>
 
 # TYPE MIME ACCEPT VIDEO UPLOAD
-AddType video/ogg  .ogv
+AddType video/ogg  .ogg
 AddType video/mp4  .mp4
 AddType video/webm .webm
 AddType video/avi  .avi
+AddType video/flv  .flv
